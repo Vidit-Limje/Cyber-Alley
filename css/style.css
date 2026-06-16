@@ -1,0 +1,249 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:black;
+}
+
+#scene{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+}
+
+/* =========================
+   IMAGE LAYERS
+========================= */
+
+#scene img{
+
+    position:absolute;
+
+    width:110%;
+    height:110%;
+
+    top:-5%;
+    left:-5%;
+
+    object-fit:cover;
+
+    pointer-events:none;
+}
+
+#bg{
+    z-index:1;
+}
+
+/* Main Alley */
+
+#alley{
+    z-index:3;
+}
+
+/* =========================
+   NEON ATMOSPHERE
+========================= */
+
+#neonAtmosphere{
+
+    z-index:4;
+
+    opacity:1;
+
+    pointer-events:none;
+
+    filter:
+        brightness(.7)
+        contrast(1.5);
+}
+
+/* =========================
+   FLICKERING BOARDS
+========================= */
+
+#neonBoards{
+
+    z-index:5;
+
+    opacity:1;
+
+    mix-blend-mode:screen;
+
+    pointer-events:none;
+
+    filter:
+        brightness(1.25)
+        saturate(1.4);
+
+    transform-origin:center center;
+
+    will-change:
+        opacity,
+        filter,
+        transform;
+}
+
+/* =========================
+   FOG / MIST
+========================= */
+
+#fog,
+#mist{
+
+    display:none;
+}
+
+/* =========================
+   RAIN
+========================= */
+
+#rain-far,
+#rain-mid,
+#rain-near{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+}
+
+/* Distance Rain */
+
+#rain-far{
+
+    z-index:2;
+
+    opacity:.45;
+
+    filter:blur(.5px);
+
+    mix-blend-mode:screen;
+}
+
+/* Mid Rain */
+
+#rain-mid{
+
+    z-index:7;
+
+    opacity:.50;
+
+    mix-blend-mode:screen;
+}
+
+/* Camera Rain */
+
+#rain-near{
+
+    z-index:9;
+
+    opacity:.85;
+
+    filter:blur(1px);
+
+    mix-blend-mode:screen;
+}
+
+/* =========================
+   FOREGROUND
+========================= */
+
+#fg{
+
+    z-index:8;
+}
+
+/* =========================
+   SPLASHES
+========================= */
+
+#splashes{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:10;
+
+    pointer-events:none;
+
+    mix-blend-mode:screen;
+}
+
+/* =========================
+   VIGNETTE
+========================= */
+
+#scene::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:12;
+
+    background:
+    radial-gradient(
+        ellipse at center,
+        transparent 55%,
+        rgba(0,0,0,.40) 100%
+    );
+}
+
+/* =========================
+   FILM GRAIN
+========================= */
+
+#grain{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:13;
+
+    pointer-events:none;
+
+    opacity:.02;
+
+    background-image:
+    repeating-radial-gradient(
+        circle,
+        rgba(255,255,255,.2) 0,
+        rgba(255,255,255,0) 1px
+    );
+
+    background-size:
+    4px 4px;
+
+    animation:
+    grain .25s infinite;
+}
+
+@keyframes grain{
+
+    0%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(-2px,1px);
+    }
+
+    100%{
+        transform:translate(2px,-1px);
+    }
+}
