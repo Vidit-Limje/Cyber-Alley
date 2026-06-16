@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber Alley</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body>
+
+    <div id="scene">
+
+        <!-- =========================
+             BACKGROUND
+        ========================== -->
+
+        <img
+            id="bg"
+            src="assets/background.png">
+
+        <!-- FAR DISTANCE RAIN -->
+
+        <canvas
+            id="rain-far"></canvas>
+
+        <!-- =========================
+             MAIN ALLEY
+        ========================== -->
+
+        <img
+            id="alley"
+            src="assets/alley.png">
+
+        <!-- =========================
+             NEON ATMOSPHERE
+        ========================== -->
+
+        <img
+            id="neonAtmosphere"
+            src="assets/neon.png">
+
+        <!-- =========================
+             FLICKERING BOARDS ONLY
+        ========================== -->
+
+        <img
+            id="neonBoards"
+            src="assets/neonBoards.png">
+
+        <!-- =========================
+             ATMOSPHERIC EFFECTS
+        ========================== -->
+
+        <div id="fog"></div>
+
+        <div id="mist"></div>
+
+        <!-- =========================
+             MID RAIN
+        ========================== -->
+
+        <canvas
+            id="rain-mid"></canvas>
+
+        <!-- =========================
+             FOREGROUND
+        ========================== -->
+
+        <img
+            id="fg"
+            src="assets/foreground.png">
+
+        <!-- =========================
+             CAMERA RAIN
+        ========================== -->
+
+        <canvas
+            id="rain-near"></canvas>
+
+        <!-- =========================
+             GROUND SPLASHES
+        ========================== -->
+
+        <canvas
+            id="splashes"></canvas>
+
+        <!-- =========================
+             LIGHTNING FLASH
+        ========================== -->
+
+        <div id="lightning"></div>
+
+        <!-- =========================
+             FILM GRAIN
+        ========================== -->
+
+        <div id="grain"></div>
+
+    </div>
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+
+    <script src="js/parallax.js"></script>
+
+    <script src="js/rain.js"></script>
+
+    <script src="js/flicker.js"></script>
+
+    <script src="js/fog.js"></script>
+
+    <script src="js/lightning.js"></script>
+
+    <script src="js/splashes.js"></script>
+
+</body>
+
+</html>
+
+
+
